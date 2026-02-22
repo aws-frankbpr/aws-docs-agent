@@ -124,12 +124,9 @@ rm ~/.kiro/prompts/aws-docs-*.md
 
 MIT License - See LICENSE file for details
 
-## Contributing
-
-Issues and pull requests welcome at [your-repo-url]
 
 ## Author
 
-Created by [Your Name]
+Created by [frankbpr]
 
 Built with AWS MCP servers and Kiro CLI multi-agent framework.
