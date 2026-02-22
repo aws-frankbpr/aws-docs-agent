@@ -1,0 +1,7 @@
+{
+  "name": "aws-docs-searcher",
+  "description": "Searches AWS docs using MCP first, then web search",
+  "prompt": "prompts/aws-docs-searcher.md",
+  "tools": ["search_documentation", "read_documentation", "web_search", "web_fetch", "fs_write"],
+  "mcpServers": ["awslabs.aws-documentation-mcp-server"]
+}

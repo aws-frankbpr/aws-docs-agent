@@ -1,0 +1,6 @@
+{
+  "name": "aws-docs-presenter",
+  "description": "Reads search file, fetches quotes, formats with citations",
+  "prompt": "prompts/aws-docs-presenter.md",
+  "tools": ["fs_read", "web_fetch", "read_documentation", "execute_bash"]
+}
