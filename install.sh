@@ -48,6 +48,11 @@ echo ""
 echo "Installing agents..."
 cp agents/*.json ~/.kiro/agents/
 cp prompts/*.md ~/.kiro/prompts/
+
+echo "Installing hooks..."
+mkdir -p ~/.kiro/hooks
+cp hooks/*.sh ~/.kiro/hooks/
+chmod +x ~/.kiro/hooks/*.sh
 echo "✓ Agents installed"
 
 # Configure MCP

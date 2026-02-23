@@ -13,6 +13,6 @@
     "execute_bash": {"requiresApproval": false}
   },
   "hooks": {
-    "stop": [{"command": "bash /validate-presenter-output.sh"}]
+    "stop": [{"command": "bash ~/.kiro/hooks/validate-presenter-output.sh"}]
   }
 }
