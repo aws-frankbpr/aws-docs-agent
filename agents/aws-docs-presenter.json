@@ -1,23 +1,18 @@
 {
-  "name": "aws-docs-searcher",
-  "description": "Searches AWS docs using MCP first, then web search",
+  "name": "aws-docs-presenter",
+  "description": "Reads search file, fetches quotes, formats with citations",
   "prompt": "prompts/aws-docs-presenter.md",
-  "tools": ["search_documentation", "read_documentation", "web_search", "web_fetch", "fs_write"],
-  "allowedTools": ["search_documentation", "read_documentation", "web_search", "web_fetch", "fs_write"],
+  "tools": ["fs_read", "web_fetch", "read_documentation", "execute_bash"],
+  "allowedTools": ["fs_read", "web_fetch", "read_documentation", "execute_bash"],
   "includeMcpJson": false,
   "model": null,
-  "mcpServers": {
-    "awslabs.aws-documentation-mcp-server": {
-      "command": "uvx",
-      "args": ["awslabs.aws-documentation-mcp-server@latest"],
-      "env": {"FASTMCP_LOG_LEVEL": "ERROR", "AWS_DOCUMENTATION_PARTITION": "aws"}
-    }
-  },
   "toolsSettings": {
-    "search_documentation": {"requiresApproval": false},
-    "read_documentation": {"requiresApproval": false},
-    "web_search": {"requiresApproval": false},
+    "fs_read": {"requiresApproval": false},
     "web_fetch": {"requiresApproval": false},
-    "fs_write": {"requiresApproval": false}
+    "read_documentation": {"requiresApproval": false},
+    "execute_bash": {"requiresApproval": false}
+  },
+  "hooks": {
+    "stop": [{"command": "bash /Users/frankbpr/Desktop/1.IA/12. Prompts/hooks/validate-presenter-output.sh"}]
   }
 }
