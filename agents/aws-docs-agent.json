@@ -3,10 +3,19 @@
   "description": "AWS Documentation expert - finds precise docs with exact citations",
   "prompt": "prompts/aws-docs-agent.md",
   "tools": ["use_subagent"],
+  "allowedTools": ["use_subagent"],
+  "includeMcpJson": false,
+  "model": null,
   "toolsSettings": {
     "subagent": {
-      "availableAgents": ["aws-docs-searcher", "aws-docs-presenter"],
-      "trustedAgents": ["aws-docs-searcher", "aws-docs-presenter"]
+      "availableAgents": [
+        "aws-docs-searcher",
+        "aws-docs-presenter"
+      ],
+      "trustedAgents": [
+        "aws-docs-searcher",
+        "aws-docs-presenter"
+      ]
     }
   }
 }
