@@ -1,6 +1,23 @@
 {
-  "name": "aws-docs-presenter",
-  "description": "Reads search file, fetches quotes, formats with citations",
+  "name": "aws-docs-searcher",
+  "description": "Searches AWS docs using MCP first, then web search",
   "prompt": "prompts/aws-docs-presenter.md",
-  "tools": ["fs_read", "web_fetch", "read_documentation", "execute_bash"]
+  "tools": ["search_documentation", "read_documentation", "web_search", "web_fetch", "fs_write"],
+  "allowedTools": ["search_documentation", "read_documentation", "web_search", "web_fetch", "fs_write"],
+  "includeMcpJson": false,
+  "model": null,
+  "mcpServers": {
+    "awslabs.aws-documentation-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.aws-documentation-mcp-server@latest"],
+      "env": {"FASTMCP_LOG_LEVEL": "ERROR", "AWS_DOCUMENTATION_PARTITION": "aws"}
+    }
+  },
+  "toolsSettings": {
+    "search_documentation": {"requiresApproval": false},
+    "read_documentation": {"requiresApproval": false},
+    "web_search": {"requiresApproval": false},
+    "web_fetch": {"requiresApproval": false},
+    "fs_write": {"requiresApproval": false}
+  }
 }
