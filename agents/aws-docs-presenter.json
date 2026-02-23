@@ -13,6 +13,6 @@
     "execute_bash": {"requiresApproval": false}
   },
   "hooks": {
-    "stop": [{"command": "bash /Users/frankbpr/Desktop/1.IA/12. Prompts/hooks/validate-presenter-output.sh"}]
+    "stop": [{"command": "bash /validate-presenter-output.sh"}]
   }
 }
