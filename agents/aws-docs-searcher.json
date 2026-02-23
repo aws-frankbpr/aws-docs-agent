@@ -3,5 +3,21 @@
   "description": "Searches AWS docs using MCP first, then web search",
   "prompt": "prompts/aws-docs-searcher.md",
   "tools": ["search_documentation", "read_documentation", "web_search", "web_fetch", "fs_write"],
-  "mcpServers": ["awslabs.aws-documentation-mcp-server"]
+  "allowedTools": ["search_documentation", "read_documentation", "web_search", "web_fetch", "fs_write"],
+  "includeMcpJson": false,
+  "model": null,
+  "mcpServers": {
+    "awslabs.aws-documentation-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.aws-documentation-mcp-server@latest"],
+      "env": {"FASTMCP_LOG_LEVEL": "ERROR", "AWS_DOCUMENTATION_PARTITION": "aws"}
+    }
+  },
+  "toolsSettings": {
+    "search_documentation": {"requiresApproval": false},
+    "read_documentation": {"requiresApproval": false},
+    "web_search": {"requiresApproval": false},
+    "web_fetch": {"requiresApproval": false},
+    "fs_write": {"requiresApproval": false}
+  }
 }
